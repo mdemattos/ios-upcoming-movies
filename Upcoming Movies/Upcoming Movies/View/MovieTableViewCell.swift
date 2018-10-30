@@ -15,24 +15,21 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     
-    var movieTitle : String?
-    var releaseDate : String?
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        if let title = movieTitle {
-            movieTitleLabel.text = title
-        }
-        
-        if let releaseDate = releaseDate {
-            releaseDateLabel.text = releaseDate
-        }
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func configure(poster: String? = nil, title: String?, genre: String?, releaseDate: String?) {
+        if let posterImage = poster {
+            Util.setMovieImageView(imageView: posterImageView, url: URL(string: posterImage)!)
+        }
+        movieTitleLabel.text = title
+        genreLabel.text = genre
+        releaseDateLabel.text = "\("Release date"): \(Util.formatDate(dateFormattedAsString: releaseDate) ?? "")"
     }
 
 }
