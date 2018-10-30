@@ -22,7 +22,7 @@ No external libraries were used to keep the application as simple and with the l
 
 Instead of using the popular Alamofire framework, the HTTP calls the app makes were based on [this tutorial][tutorial]. 
 
-[tutorial]: https://speakerdeck.com/hasseg/localization-practicum
+[tutorial]: https://medium.com/ios-os-x-development/minimal-networking-layer-from-scratch-in-swift-4-a151af786dc5
 
 ### Screenshots
 
